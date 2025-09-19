@@ -13,8 +13,13 @@ Teniendo en cuenta que solo necesita leer los valores, pero no modificarlos*/
 double calcularMagnitud(Point p1)
 {
     // Completar: Usar la fórmula de distancia euclidiana
-    // sugerencia: puede hacer uso de funcionines como sqrt y 
-    return;
+    // sugerencia: puede hacer uso de funcionines como sqrt y pow
+
+    double magnitud;
+    magnitud = sqrt(pow(p1.x, 2) + pow(p1.y, 2));
+    std::cout << "Magnitud: " << magnitud << std::endl;
+
+    return magnitud;
 }
 
 // Función para leer las coordenadas de varios puntos
