@@ -27,19 +27,21 @@ void leerPuntos(Point puntos[], int n)
 {
     char respuesta;
     std::cout << "¿Desea ingresar los puntos manualmente? (s/n): ";
+    std::cin >> respuesta;
     // Leer la respuesta del usuario
 
     // Completar: Verificar si la respuesta es 's' o 'n', tener en cuenta mayúsculas y minúsculas
-    if (respuesta == <valor a comparar><Operador logico> respuesta == <valor a comparar>)
+    if (respuesta == 's' || respuesta == 'S')
     {
         // Completar: Leer las coordenadas de cada punto
-        for ()
+        for (int i = 0; i < n; i++)
         {
             std::cout << "Ingrese las coordenadas del punto " << i + 1 << " (x, y): ";
-            std::cin >> puntos[].>> puntos;
+            std::cin >> puntos[i].x;
+            std::cin >> puntos[i].y;
         }
-    }
-    else
+        std::cout << "Puntos ingresados: " << std::endl;
+    } else
     {
         // Usar puntos predeterminados
         std::cout << "Usando puntos predeterminados...\n";
@@ -47,6 +49,7 @@ void leerPuntos(Point puntos[], int n)
         puntos[1] = {3, 4};  // Punto 2 (3, 4)
         puntos[2] = {6, 8};  // Punto 3 (6, 8)
         puntos[3] = {9, 12}; // Punto 4 (9, 12)
+        
     }
 }
 
