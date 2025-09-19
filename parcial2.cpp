@@ -13,7 +13,7 @@ Teniendo en cuenta que solo necesita leer los valores, pero no modificarlos*/
 double calcularMagnitud(Point p1)
 {
     // Completar: Usar la fórmula de distancia euclidiana
-    // sugerencia: puede hacer uso de funcionines como sqrt y pow
+    // sugerencia: puede hacer uso de funcionines como sqrt y 
     return;
 }
 
@@ -61,13 +61,14 @@ void mostrarResultado(Point puntos[], int indiceMayorMagnitud, double magnitud)
 
 int main()
 {
-    <tipo> n;
+    int n;
 
     std::cout << "Ingrese el número de puntos (mínimo 2): ";
-    // Leer el número de puntos
-    std::<funcion> >> n;
 
-    if ()
+    // Leer el número de puntos
+    std::cin >> n;
+
+    if (n < 2)
     {
         std::cout << "Se necesitan al menos 2 puntos para calcular las distancias.\n";
         return 1;
@@ -76,13 +77,14 @@ int main()
     Point puntos[n]; // Arreglo de estructuras para almacenar las coordenadas (x, y)
 
     // Leer los puntos (manual o predeterminado)
-    leerPuntos(<completar argumentos>);
+    leerPuntos(puntos, n);
 
     // Calcular mayor magnitud
-    <type> indiceMayorMagnitud;
+    int indiceMayorMagnitud;
+    double distancia = calcularMayorMagnitud(puntos, n, indiceMayorMagnitud);
     // llamar funcion
     //  Mostrar el resultado
-    mostrarResultado(puntos, <variable>, distancia);
+    mostrarResultado(puntos, indiceMayorMagnitud, distancia);
 
     return 0;
 }
