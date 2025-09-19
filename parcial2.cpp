@@ -45,10 +45,12 @@ void leerPuntos(Point puntos[], int n)
     {
         // Usar puntos predeterminados
         std::cout << "Usando puntos predeterminados...\n";
-        puntos[0] = {0, 0};  // Punto 1 (0, 0)
-        puntos[1] = {3, 4};  // Punto 2 (3, 4)
-        puntos[2] = {6, 8};  // Punto 3 (6, 8)
-        puntos[3] = {9, 12}; // Punto 4 (9, 12)
+        for(int i = 0; i < n; i++)
+        {
+            puntos[i].x = i + 1; 
+            puntos[i].y = (i + 1) * 2;
+        }
+
         
     }
 }
@@ -57,18 +59,18 @@ void leerPuntos(Point puntos[], int n)
 double calcularMayorMagnitud(Point puntos[], int n, int &indiceMayorMagnitud)
 {
     double mayorMagnitud = 0.0;
-        indiceMayorMagnitud = -1;
+    indiceMayorMagnitud = -1;
 
-        for (int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
+    {
+        double magnitud = std::sqrt(puntos[i].x * puntos[i].x + puntos[i].y * puntos[i].y);
+
+        if (magnitud > mayorMagnitud)
         {
-            double magnitud = std::sqrt(puntos[i].x * puntos[i].x + puntos[i].y * puntos[i].y);
-
-            if (magnitud > mayorMagnitud)
-            {
-                mayorMagnitud = magnitud;
-                indiceMayorMagnitud = i;
-            }
+            mayorMagnitud = magnitud;
+            indiceMayorMagnitud = i;
         }
+    }
 
     return mayorMagnitud;
 }
