@@ -53,9 +53,22 @@ void leerPuntos(Point puntos[], int n)
     }
 }
 
-// Función para calcular la distancia más cercana desde un punto específico
+// Función para calcular la magnitud mayor entre todos los vectores
 double calcularMayorMagnitud(Point puntos[], int n, int &indiceMayorMagnitud)
 {
+    double mayorMagnitud = 0.0;
+        indiceMayorMagnitud = -1;
+
+        for (int i = 0; i < n; i++)
+        {
+            double magnitud = std::sqrt(puntos[i].x * puntos[i].x + puntos[i].y * puntos[i].y);
+
+            if (magnitud > mayorMagnitud)
+            {
+                mayorMagnitud = magnitud;
+                indiceMayorMagnitud = i;
+            }
+        }
 
     return mayorMagnitud;
 }
@@ -63,8 +76,8 @@ double calcularMayorMagnitud(Point puntos[], int n, int &indiceMayorMagnitud)
 // Función para mostrar el punto con mayor magnitud y sus coordenadas
 void mostrarResultado(Point puntos[], int indiceMayorMagnitud, double magnitud)
 {
-    std::cout << "El punto más cercano es: (" << puntos[indiceMayorMagnitud].x << ", " << puntos[indiceMayorMagnitud].y << ")\n";
-    std::cout << "La distancia al punto más cercano es: " << distancia << std::endl;
+    std::cout << "El vector con mayor magnitud es: (" << puntos[indiceMayorMagnitud].x << ", " << puntos[indiceMayorMagnitud].y << ")\n";
+    std::cout << "La mayor magnitud es: " << magnitud << std::endl;
 }
 
 int main()
